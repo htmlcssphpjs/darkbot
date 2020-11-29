@@ -44,11 +44,11 @@ bot.on('callback_query', (query) => {
     } else {
       bot.sendMessage(chatId, 'Прости, места заняты');
     }
-  }
-
-  if (query.data === 'looker') {
+  } else if (query.data === 'looker') {
     bot.sendMessage(chatId, 'Жди сообщение о начале!');
     bot.sendMessage(idAdmin, 'Новый зритель @' + query.message.chat.username + ' ' + query.message.chat.id + '\nМест осталось ' + mest);
+  } else {
+    bot.sendMessage(chatId, 'Что-то не то =/');
   }
 });
 
